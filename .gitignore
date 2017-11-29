@@ -19,6 +19,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 
 # compiled CSS
 *.css
+=======
+>>>>>>> 414cfe777a02f321023866b9b7015ce14970b3ba

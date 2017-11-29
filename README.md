@@ -204,7 +204,11 @@ In addition to [ES6](https://github.com/lukehoban/es6features) syntax features, 
 
 Learn more about [different proposal stages](https://babeljs.io/docs/plugins/#presets-stage-x-experimental-presets-).
 
+<<<<<<< HEAD
 While we recommend to use experimental proposals with some caution, Facebook heavily uses these features in the product code, so we intend to provide [codemods](https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb) if any of these proposals change in the future.
+=======
+While we recommend using experimental proposals with some caution, Facebook heavily uses these features in the product code, so we intend to provide [codemods](https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb) if any of these proposals change in the future.
+>>>>>>> 414cfe777a02f321023866b9b7015ce14970b3ba
 
 Note that **the project only includes a few ES6 [polyfills](https://en.wikipedia.org/wiki/Polyfill)**:
 
@@ -262,7 +266,10 @@ Then add the block below to your `launch.json` file and put it inside the `.vsco
     "request": "launch",
     "url": "http://localhost:3000",
     "webRoot": "${workspaceRoot}/src",
+<<<<<<< HEAD
     "userDataDir": "${workspaceRoot}/.vscode/chrome",
+=======
+>>>>>>> 414cfe777a02f321023866b9b7015ce14970b3ba
     "sourceMapPathOverrides": {
       "webpack:///src/*": "${webRoot}/*"
     }
@@ -273,6 +280,11 @@ Then add the block below to your `launch.json` file and put it inside the `.vsco
 
 Start your app by running `npm start`, and start debugging in VS Code by pressing `F5` or by clicking the green debug icon. You can now write code, set breakpoints, make changes to the code, and debug your newly modified code—all from your editor.
 
+<<<<<<< HEAD
+=======
+Having problems with VS Code Debugging? Please see their [troubleshooting guide](https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#troubleshooting).
+
+>>>>>>> 414cfe777a02f321023866b9b7015ce14970b3ba
 ### WebStorm
 
 You would need to have [WebStorm](https://www.jetbrains.com/webstorm/) and [JetBrains IDE Support](https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji) Chrome extension installed.
@@ -911,7 +923,11 @@ REACT_APP_SECRET_CODE=abcdef
 
 `.env` files **should be** checked into source control (with the exclusion of `.env*.local`).
 
+<<<<<<< HEAD
 #### What other `.env` files are can be used?
+=======
+#### What other `.env` files can be used?
+>>>>>>> 414cfe777a02f321023866b9b7015ce14970b3ba
 
 >Note: this feature is **available with `react-scripts@1.0.0` and higher**.
 
@@ -1615,7 +1631,11 @@ By default, the production build is a fully functional, offline-first
 Progressive Web Apps are faster and more reliable than traditional web pages, and provide an engaging mobile experience:
 
  * All static site assets are cached so that your page loads fast on subsequent visits, regardless of network connectivity (such as 2G or 3G). Updates are downloaded in the background.
+<<<<<<< HEAD
  * Your app will work regardless of network state, even if offline. This means your users will be able to use your app at 10,000 feet and on the Subway.
+=======
+ * Your app will work regardless of network state, even if offline. This means your users will be able to use your app at 10,000 feet and on the subway.
+>>>>>>> 414cfe777a02f321023866b9b7015ce14970b3ba
  * On mobile devices, your app can be added directly to the user's home screen, app icon and all. You can also re-engage users using web **push notifications**. This eliminates the need for the app store.
 
 The [`sw-precache-webpack-plugin`](https://github.com/goldhand/sw-precache-webpack-plugin)
