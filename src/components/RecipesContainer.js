@@ -1,25 +1,35 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 import Title from '../components/Title'
 import RecipeItem from './RecipeItem'
+import './RecipesContainer.css'
 
 class RecipesContainer extends PureComponent {
   renderRecipe(recipe, index) {
-    return <RecipeItem key={index} { ...recipe } />
+    return (
+      <RecipeItem key={index} {...recipe} />
+    )
   }
 
   render() {
+    const { recipes } = this.props
+
+    if (!recipes) { return null }
+
     return(
-      <div className="recipes wrapper">
+      <div className="RecipesContainer">
         <header>
-          <Title content="Recipes" />
+          <Title content="All Recipes" />
         </header>
 
         <main>
-          { this.props.recipes.map(this.renderRecipe) }
+          {recipes.map(this.renderRecipe)}
         </main>
       </div>
     )
   }
 }
 
-export default RecipesContainer
+const mapStateToProps = ({ recipes }) => ({ recipes })
+
+export default connect(mapStateToProps)(RecipesContainer)
