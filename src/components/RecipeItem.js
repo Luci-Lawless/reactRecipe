@@ -4,6 +4,7 @@ import Pescatarian from '../images/pescatarian.svg'
 import Vegan from '../images/vegan.svg'
 import Vegetarian from '../images/vegetarian.svg'
 
+
 class RecipeItem extends PureComponent {
   static propTypes = {
     title: PropTypes.string.isRequired,

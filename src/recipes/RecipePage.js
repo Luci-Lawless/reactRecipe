@@ -10,7 +10,7 @@ export class RecipePage extends PureComponent {
   }
 
   componentWillMount() {
-    this.props.fetchRecipes()
+    this.props.dispatch(fetchRecipes())
   }
 
   render() {

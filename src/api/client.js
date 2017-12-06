@@ -51,6 +51,10 @@ export default class ApiClient {
       .set(this.headers())
   }
 
+  signOut() {
+    localStorage.removeItem(this.options.tokenStorageKey)
+  }
+
   headers() {
     let headers = {
       Accept: 'application/json'

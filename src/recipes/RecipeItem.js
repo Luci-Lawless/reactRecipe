@@ -1,6 +1,8 @@
-// src/recipes/RecipeItem.js
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import likeRecipe from '../actions/recipes/like'
 import LikeButton from '../components/LikeButton'
 import RecipeCategory from './RecipeCategory'
 import Title from '../components/Title'
@@ -17,8 +19,13 @@ class RecipeItem extends PureComponent {
     pescatarian: PropTypes.bool,
   }
 
+  toggleLike = () => {
+    console.log('TOGGLE LIKE')
+    this.props.toggleLike(this.props._id)
+  }
+
   render() {
-    const { title, summary, vegan, vegetarian, pescatarian, photo } = this.props
+    const { _id, title, summary, vegan, vegetarian, pescatarian, photo, liked } = this.props
     const categories = { vegan, vegetarian, pescatarian }
 
     return(
@@ -27,7 +34,9 @@ class RecipeItem extends PureComponent {
           <div
             className="cover"
             style={{ backgroundImage: `url(${photo || PLACEHOLDER })` }} />
-          <Title content={title} className="level-2" />
+          <Link to={`/recipes/${_id}`}>
+            <Title content={title} className="level-2" />
+          </Link>
           <ul className="categories">
             <RecipeCategory { ...categories } />
           </ul>
@@ -37,11 +46,13 @@ class RecipeItem extends PureComponent {
           <p>{ summary }</p>
         </div>
         <footer>
-          <LikeButton />
+          <LikeButton onChange={this.toggleLike} liked={liked} />
         </footer>
       </article>
     )
   }
 }
 
-export default RecipeItem
+const mapDispatchToProps = { toggleLike: likeRecipe }
+
+export default connect(null, mapDispatchToProps)(RecipeItem)
